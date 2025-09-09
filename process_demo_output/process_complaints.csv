@@ -1,0 +1,36 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+18,zh_process_18,用户943,网约车投诉流程复杂，问题解决效率很低,zh,2025-09-01 11:22:52.465154,复杂度问题,10,客户服务,客户服务,高,流程优化,67,14,14,2025-09-09 05:22:52
+3,zh_process_3,用户202,政务服务网上办事流程设计得不合理，找个表格要点十几下,zh,2025-08-29 08:22:52.465084,成本问题,9,医疗健康,支付结算,中,流程优化,68,7,10,2025-09-09 05:22:52
+7,zh_process_7,用户216,医保报销流程复杂，老人根本搞不懂怎么操作,zh,2025-09-02 17:22:52.465103,效率问题,9,物流快递,退换货,高,流程优化,68,37,19,2025-09-09 05:22:52
+14,zh_process_14,用户498,信用卡申请流程太长，审核时间也太久,zh,2025-08-12 14:22:52.465138,系统技术,9,医疗健康,数据录入,中,流程优化,97,31,27,2025-09-09 05:22:52
+25,en_process_5,user190,"Customer service process is broken, transferred 5 times for one simple question",en,2025-08-15 18:22:52.465190,效率问题,9,电商购物,申请审批,低,process optimization,80,5,20,2025-09-09 05:22:52
+26,en_process_6,user632,"Insurance claim process is unnecessarily complex, requires too much paperwork",en,2025-08-25 08:22:52.465193,流程设计,9,电商购物,客户服务,中,process optimization,27,19,17,2025-09-09 05:22:52
+31,en_process_11,user121,Refund process takes weeks when it should take minutes,en,2025-09-01 02:22:52.465212,重复操作,9,餐饮外卖,退换货,中,process optimization,49,3,14,2025-09-09 05:22:52
+10,zh_process_10,用户554,保险理赔流程太复杂，要提供各种证明材料,zh,2025-09-08 08:22:52.465115,重复操作,8,教育培训,数据录入,中,流程优化,61,12,19,2025-09-09 05:22:52
+11,zh_process_11,用户559,学校报名系统设计不合理，每年都要重新注册,zh,2025-08-18 17:22:52.465120,复杂度问题,8,客户服务,信息查询,高,流程优化,69,10,1,2025-09-09 05:22:52
+20,zh_process_20,用户795,公积金提取手续繁琐，网上办不了还要现场跑,zh,2025-08-11 23:22:52.465162,重复操作,8,电商购物,客户服务,低,流程优化,13,10,13,2025-09-09 05:22:52
+22,en_process_2,user190,"Hospital appointment system is a nightmare, takes forever to book anything",en,2025-08-26 22:22:52.465175,成本问题,8,金融服务,申请审批,低,process optimization,42,20,15,2025-09-09 05:22:52
+28,en_process_8,user728,"Delivery return process takes forever, why can't it be automated?",en,2025-08-26 12:22:52.465201,流程设计,8,政务服务,申请审批,低,process optimization,23,23,17,2025-09-09 05:22:52
+34,en_process_14,user787,Loan application process requires too much documentation,en,2025-08-21 02:22:52.465226,效率问题,8,餐饮外卖,预约排队,低,process optimization,57,33,10,2025-09-09 05:22:52
+8,zh_process_8,用户777,网购退换货要拍照、填单、等客服，太浪费时间了,zh,2025-08-29 17:22:52.465107,体验问题,7,教育培训,注册登录,中,流程优化,78,41,29,2025-09-09 05:22:52
+12,zh_process_12,用户645,外卖退款流程麻烦，要等客服处理好久,zh,2025-08-17 00:22:52.465129,重复操作,7,物流快递,退换货,低,流程优化,97,49,4,2025-09-09 05:22:52
+17,zh_process_17,用户389,社保办理要填很多重复信息，系统不能自动填充,zh,2025-09-07 23:22:52.465150,人工服务,7,电商购物,数据录入,高,流程优化,94,30,13,2025-09-09 05:22:52
+2,zh_process_2,用户353,医院挂号系统太麻烦，每次都要重新填一遍信息,zh,2025-08-12 21:22:52.465077,流程设计,6,物流快递,支付结算,中,流程优化,26,45,5,2025-09-09 05:22:52
+4,zh_process_4,用户182,快递退货流程太繁琐，要填好多表格还要等审核,zh,2025-08-27 16:22:52.465089,体验问题,6,教育培训,支付结算,中,流程优化,88,11,11,2025-09-09 05:22:52
+19,zh_process_19,用户507,电商平台售后流程设计不合理，用户体验差,zh,2025-08-29 02:22:52.465158,效率问题,6,餐饮外卖,退换货,低,流程优化,95,2,0,2025-09-09 05:22:52
+21,en_process_1,user937,"The banking process is so complicated, why do I need to fill out 5 different forms?",en,2025-08-28 04:22:52.465167,效率问题,6,教育培训,支付结算,中,process optimization,6,12,21,2025-09-09 05:22:52
+23,en_process_3,user415,"Government website process is confusing, too many steps for simple tasks",en,2025-08-24 19:22:52.465182,复杂度问题,6,教育培训,预约排队,低,process optimization,15,15,25,2025-09-09 05:22:52
+30,en_process_10,user265,Job application process on this platform is too lengthy and repetitive,en,2025-08-22 16:22:52.465209,复杂度问题,6,教育培训,客户服务,高,process optimization,38,16,10,2025-09-09 05:22:52
+1,zh_process_1,用户261,银行办个业务要跑三趟，流程太复杂了，能不能简化一下,zh,2025-08-18 16:22:52.465053,系统技术,5,政务服务,支付结算,高,流程优化,11,4,7,2025-09-09 05:22:52
+5,zh_process_5,用户676,客服电话转来转去，一个简单问题要说半天,zh,2025-08-23 18:22:52.465094,人工服务,5,物流快递,支付结算,低,流程优化,31,8,15,2025-09-09 05:22:52
+6,zh_process_6,用户758,银行APP转账步骤太多，为什么不能一键转账,zh,2025-08-31 05:22:52.465099,效率问题,5,教育培训,客户服务,高,流程优化,11,15,1,2025-09-09 05:22:52
+9,zh_process_9,用户202,政府办证要准备一堆材料，还要跑好几个部门,zh,2025-08-24 20:22:52.465111,成本问题,5,餐饮外卖,退换货,中,流程优化,47,48,8,2025-09-09 05:22:52
+13,zh_process_13,用户472,房产过户手续繁琐，来回跑了十几趟,zh,2025-08-22 09:22:52.465134,体验问题,5,教育培训,申请审批,高,流程优化,45,44,13,2025-09-09 05:22:52
+15,zh_process_15,用户190,快递代收点取件要扫码、验证、签名，太麻烦,zh,2025-09-08 17:22:52.465142,流程设计,5,医疗健康,客户服务,高,流程优化,50,34,17,2025-09-09 05:22:52
+16,zh_process_16,用户876,电信营业厅办业务排队时间长，流程效率低,zh,2025-08-28 23:22:52.465146,效率问题,5,政务服务,信息查询,低,流程优化,9,37,29,2025-09-09 05:22:52
+27,en_process_7,user498,"University enrollment process is outdated, still using paper forms in 2024",en,2025-09-02 08:22:52.465197,体验问题,5,教育培训,预约排队,中,process optimization,16,18,14,2025-09-09 05:22:52
+29,en_process_9,user732,"Tax filing process is overly complicated, need to simplify the steps",en,2025-08-22 12:22:52.465204,成本问题,5,客户服务,支付结算,低,process optimization,36,22,23,2025-09-09 05:22:52
+35,en_process_15,user937,"Tech support ticket system is inefficient, no clear workflow",en,2025-08-12 07:22:52.465230,系统技术,5,物流快递,客户服务,中,process optimization,32,0,13,2025-09-09 05:22:52
+24,en_process_4,user938,"Return process on this shopping site is ridiculous, way too many hoops to jump through",en,2025-08-14 11:22:52.465186,流程设计,4,教育培训,客户服务,高,process optimization,46,38,23,2025-09-09 05:22:52
+32,en_process_12,user363,"Account verification process is frustrating, too many security steps",en,2025-08-16 21:22:52.465218,复杂度问题,4,政务服务,申请审批,中,process optimization,42,20,5,2025-09-09 05:22:52
+33,en_process_13,user651,Subscription cancellation process is deliberately complicated,en,2025-09-06 20:22:52.465222,流程设计,4,客户服务,退换货,中,process optimization,57,5,19,2025-09-09 05:22:52

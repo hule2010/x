@@ -1,0 +1,5 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+25,en_process_5,user190,"Customer service process is broken, transferred 5 times for one simple question",en,2025-08-15 18:22:52.465190,效率问题,9,电商购物,申请审批,低,process optimization,80,5,20,2025-09-09 05:22:52
+26,en_process_6,user632,"Insurance claim process is unnecessarily complex, requires too much paperwork",en,2025-08-25 08:22:52.465193,流程设计,9,电商购物,客户服务,中,process optimization,27,19,17,2025-09-09 05:22:52
+20,zh_process_20,用户795,公积金提取手续繁琐，网上办不了还要现场跑,zh,2025-08-11 23:22:52.465162,重复操作,8,电商购物,客户服务,低,流程优化,13,10,13,2025-09-09 05:22:52
+17,zh_process_17,用户389,社保办理要填很多重复信息，系统不能自动填充,zh,2025-09-07 23:22:52.465150,人工服务,7,电商购物,数据录入,高,流程优化,94,30,13,2025-09-09 05:22:52

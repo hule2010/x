@@ -1,0 +1,4 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+3,zh_process_3,用户202,政务服务网上办事流程设计得不合理，找个表格要点十几下,zh,2025-08-29 08:22:52.465084,成本问题,9,医疗健康,支付结算,中,流程优化,68,7,10,2025-09-09 05:22:52
+14,zh_process_14,用户498,信用卡申请流程太长，审核时间也太久,zh,2025-08-12 14:22:52.465138,系统技术,9,医疗健康,数据录入,中,流程优化,97,31,27,2025-09-09 05:22:52
+15,zh_process_15,用户190,快递代收点取件要扫码、验证、签名，太麻烦,zh,2025-09-08 17:22:52.465142,流程设计,5,医疗健康,客户服务,高,流程优化,50,34,17,2025-09-09 05:22:52

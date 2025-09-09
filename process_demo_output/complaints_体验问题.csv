@@ -1,0 +1,5 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+8,zh_process_8,用户777,网购退换货要拍照、填单、等客服，太浪费时间了,zh,2025-08-29 17:22:52.465107,体验问题,7,教育培训,注册登录,中,流程优化,78,41,29,2025-09-09 05:22:52
+4,zh_process_4,用户182,快递退货流程太繁琐，要填好多表格还要等审核,zh,2025-08-27 16:22:52.465089,体验问题,6,教育培训,支付结算,中,流程优化,88,11,11,2025-09-09 05:22:52
+13,zh_process_13,用户472,房产过户手续繁琐，来回跑了十几趟,zh,2025-08-22 09:22:52.465134,体验问题,5,教育培训,申请审批,高,流程优化,45,44,13,2025-09-09 05:22:52
+27,en_process_7,user498,"University enrollment process is outdated, still using paper forms in 2024",en,2025-09-02 08:22:52.465197,体验问题,5,教育培训,预约排队,中,process optimization,16,18,14,2025-09-09 05:22:52

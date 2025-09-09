@@ -1,0 +1,8 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+7,zh_process_7,用户216,医保报销流程复杂，老人根本搞不懂怎么操作,zh,2025-09-02 17:22:52.465103,效率问题,9,物流快递,退换货,高,流程优化,68,37,19,2025-09-09 05:22:52
+25,en_process_5,user190,"Customer service process is broken, transferred 5 times for one simple question",en,2025-08-15 18:22:52.465190,效率问题,9,电商购物,申请审批,低,process optimization,80,5,20,2025-09-09 05:22:52
+34,en_process_14,user787,Loan application process requires too much documentation,en,2025-08-21 02:22:52.465226,效率问题,8,餐饮外卖,预约排队,低,process optimization,57,33,10,2025-09-09 05:22:52
+19,zh_process_19,用户507,电商平台售后流程设计不合理，用户体验差,zh,2025-08-29 02:22:52.465158,效率问题,6,餐饮外卖,退换货,低,流程优化,95,2,0,2025-09-09 05:22:52
+21,en_process_1,user937,"The banking process is so complicated, why do I need to fill out 5 different forms?",en,2025-08-28 04:22:52.465167,效率问题,6,教育培训,支付结算,中,process optimization,6,12,21,2025-09-09 05:22:52
+6,zh_process_6,用户758,银行APP转账步骤太多，为什么不能一键转账,zh,2025-08-31 05:22:52.465099,效率问题,5,教育培训,客户服务,高,流程优化,11,15,1,2025-09-09 05:22:52
+16,zh_process_16,用户876,电信营业厅办业务排队时间长，流程效率低,zh,2025-08-28 23:22:52.465146,效率问题,5,政务服务,信息查询,低,流程优化,9,37,29,2025-09-09 05:22:52

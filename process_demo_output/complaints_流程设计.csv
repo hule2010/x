@@ -1,0 +1,7 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+26,en_process_6,user632,"Insurance claim process is unnecessarily complex, requires too much paperwork",en,2025-08-25 08:22:52.465193,流程设计,9,电商购物,客户服务,中,process optimization,27,19,17,2025-09-09 05:22:52
+28,en_process_8,user728,"Delivery return process takes forever, why can't it be automated?",en,2025-08-26 12:22:52.465201,流程设计,8,政务服务,申请审批,低,process optimization,23,23,17,2025-09-09 05:22:52
+2,zh_process_2,用户353,医院挂号系统太麻烦，每次都要重新填一遍信息,zh,2025-08-12 21:22:52.465077,流程设计,6,物流快递,支付结算,中,流程优化,26,45,5,2025-09-09 05:22:52
+15,zh_process_15,用户190,快递代收点取件要扫码、验证、签名，太麻烦,zh,2025-09-08 17:22:52.465142,流程设计,5,医疗健康,客户服务,高,流程优化,50,34,17,2025-09-09 05:22:52
+24,en_process_4,user938,"Return process on this shopping site is ridiculous, way too many hoops to jump through",en,2025-08-14 11:22:52.465186,流程设计,4,教育培训,客户服务,高,process optimization,46,38,23,2025-09-09 05:22:52
+33,en_process_13,user651,Subscription cancellation process is deliberately complicated,en,2025-09-06 20:22:52.465222,流程设计,4,客户服务,退换货,中,process optimization,57,5,19,2025-09-09 05:22:52
