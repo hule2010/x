@@ -1,0 +1,6 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+8,zh_8,user_zh_2791,用户546,淘宝的物流信息更新不及时，不知道包裹到哪了,zh,2025-09-02 05:12:48.689144,2,用户体验,"问题,体验,功能",-0.5849558156977076,46,21,0,2025-09-09 05:12:48
+12,zh_12,user_zh_5114,用户492,支付宝的安全验证太繁琐，每次都要验证好几遍,zh,2025-08-29 00:12:48.689169,2,功能需求,"问题,体验,功能",-0.41533426896713255,47,13,11,2025-09-09 05:12:48
+19,en_4,user_en_8361,user782,YouTube ads are getting too long and annoying,en,2025-08-21 01:12:48.689201,2,技术问题,"problem,issue,feature",0.13845859220887047,4,20,11,2025-09-09 05:12:48
+9,zh_9,user_zh_8480,用户547,iPhone的价格太贵了，性价比不高,zh,2025-08-14 07:12:48.689149,2,价格费用,"问题,体验,功能",-0.5003001292602332,20,43,8,2025-09-09 05:12:48
+16,en_1,user_en_4584,user935,"Twitter's new update is terrible, the interface is confusing",en,2025-08-12 11:12:48.689187,2,服务质量,"problem,issue,feature",-0.7265321956066608,23,11,7,2025-09-09 05:12:48

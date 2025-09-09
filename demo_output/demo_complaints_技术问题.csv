@@ -1,0 +1,5 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+2,zh_2,user_zh_8169,用户803,支付宝的界面设计太复杂了，找个功能要找半天,zh,2025-08-24 10:12:48.689110,3,技术问题,"问题,体验,功能",-0.5302330184913655,7,22,18,2025-09-09 05:12:48
+24,en_9,user_en_4012,user253,Google search results are not relevant anymore,en,2025-08-21 22:12:48.689224,3,技术问题,"problem,issue,feature",-0.8960540301600409,19,74,9,2025-09-09 05:12:48
+19,en_4,user_en_8361,user782,YouTube ads are getting too long and annoying,en,2025-08-21 01:12:48.689201,2,技术问题,"problem,issue,feature",0.13845859220887047,4,20,11,2025-09-09 05:12:48
+10,zh_10,user_zh_4145,用户556,安卓手机的广告太多，很影响使用体验,zh,2025-08-19 13:12:48.689154,4,技术问题,"问题,体验,功能",-0.24310143743970536,12,67,2,2025-09-09 05:12:48

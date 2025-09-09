@@ -1,0 +1,41 @@
+{
+  "bearer_token": "YOUR_TWITTER_BEARER_TOKEN",
+  "consumer_key": "YOUR_TWITTER_CONSUMER_KEY",
+  "consumer_secret": "YOUR_TWITTER_CONSUMER_SECRET",
+  "access_token": "YOUR_TWITTER_ACCESS_TOKEN",
+  "access_token_secret": "YOUR_TWITTER_ACCESS_TOKEN_SECRET",
+  "database_path": "x_complaints.db",
+  "output_directory": "output",
+  "max_results_per_query": 100,
+  "search_queries": [
+    "微信",
+    "支付宝",
+    "淘宝",
+    "京东",
+    "美团",
+    "滴滴",
+    "iPhone",
+    "Android",
+    "Windows",
+    "MacBook",
+    "Tesla"
+  ],
+  "complaint_keywords": {
+    "zh": ["问题", "bug", "错误", "故障", "不能用", "崩溃", "卡顿", "差评", "吐槽", "抱怨", "不满", "失望"],
+    "en": ["problem", "issue", "error", "broken", "crash", "slow", "complaint", "disappointed", "frustrated", "terrible", "awful", "hate"]
+  },
+  "difficulty_keywords": {
+    "high": {
+      "zh": ["系统", "数据库", "服务器", "网络", "算法", "架构", "集成", "兼容性", "安全", "性能"],
+      "en": ["system", "database", "server", "network", "algorithm", "architecture", "integration", "compatibility", "security", "performance"]
+    },
+    "medium": {
+      "zh": ["功能", "设置", "配置", "导入", "导出", "同步", "备份"],
+      "en": ["feature", "setting", "configuration", "import", "export", "sync", "backup"]
+    },
+    "low": {
+      "zh": ["界面", "颜色", "字体", "布局", "显示"],
+      "en": ["interface", "color", "font", "layout", "display"]
+    }
+  }
+}

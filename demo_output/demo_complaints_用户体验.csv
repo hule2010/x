@@ -1,0 +1,5 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+14,zh_14,user_zh_7770,用户133,iPhone的存储空间不够用，64GB根本不够,zh,2025-09-06 01:12:48.689178,5,用户体验,"问题,体验,功能",-0.6817861141525121,47,23,12,2025-09-09 05:12:48
+8,zh_8,user_zh_2791,用户546,淘宝的物流信息更新不及时，不知道包裹到哪了,zh,2025-09-02 05:12:48.689144,2,用户体验,"问题,体验,功能",-0.5849558156977076,46,21,0,2025-09-09 05:12:48
+4,zh_4,user_zh_8837,用户563,iPhone电池耗电太快，一天要充好几次电,zh,2025-08-17 13:12:48.689124,5,用户体验,"问题,体验,功能",-0.24577520594748847,32,58,2,2025-09-09 05:12:48
+23,en_8,user_en_8476,user175,"Amazon delivery is always late, very disappointing",en,2025-08-16 12:12:48.689220,3,用户体验,"problem,issue,feature",-0.21462530698206173,14,0,7,2025-09-09 05:12:48

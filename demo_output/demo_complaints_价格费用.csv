@@ -1,0 +1,6 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+21,en_6,user_en_4748,user170,Spotify keeps playing the same songs over and over,en,2025-09-06 21:12:48.689210,4,价格费用,"problem,issue,feature",-0.3892595509413469,22,40,8,2025-09-09 05:12:48
+3,zh_3,user_zh_4467,用户702,淘宝的搜索功能有问题，搜不到想要的商品,zh,2025-09-04 19:12:48.689118,4,价格费用,"问题,体验,功能",-0.2793298199628653,50,93,0,2025-09-09 05:12:48
+15,zh_15,user_zh_7991,用户771,安卓系统的权限管理有问题，应用乱要权限,zh,2025-08-30 15:12:48.689182,1,价格费用,"问题,体验,功能",-0.5375575063700727,2,34,12,2025-09-09 05:12:48
+22,en_7,user_en_4858,user428,Netflix removed my favorite shows without warning,en,2025-08-15 07:12:48.689215,5,价格费用,"problem,issue,feature",-0.8014262640623421,3,14,14,2025-09-09 05:12:48
+9,zh_9,user_zh_8480,用户547,iPhone的价格太贵了，性价比不高,zh,2025-08-14 07:12:48.689149,2,价格费用,"问题,体验,功能",-0.5003001292602332,20,43,8,2025-09-09 05:12:48

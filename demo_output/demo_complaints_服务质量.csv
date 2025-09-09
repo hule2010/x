@@ -1,0 +1,5 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+25,en_10,user_en_3466,user918,Apple's new iOS update made my phone slower,en,2025-08-30 02:12:48.689227,5,服务质量,"problem,issue,feature",-0.20352230209271527,14,37,8,2025-09-09 05:12:48
+1,zh_1,user_zh_7096,用户482,微信又卡了，发消息半天发不出去，这什么破网络,zh,2025-08-17 16:12:48.689087,1,服务质量,"问题,体验,功能",-0.6717059432257697,21,91,6,2025-09-09 05:12:48
+5,zh_5,user_zh_4906,用户700,安卓系统更新后变得很慢，应用启动要等很久,zh,2025-08-13 03:12:48.689129,3,服务质量,"问题,体验,功能",-0.3236478313455146,47,57,1,2025-09-09 05:12:48
+16,en_1,user_en_4584,user935,"Twitter's new update is terrible, the interface is confusing",en,2025-08-12 11:12:48.689187,2,服务质量,"problem,issue,feature",-0.7265321956066608,23,11,7,2025-09-09 05:12:48
