@@ -10,6 +10,9 @@ sqlite3  # Python内置模块
 # 网页抓取 (Selenium版本)
 selenium>=4.15.0
 webdriver-manager>=4.0.0  # 自动管理WebDriver
+undetected-chromedriver>=3.5.4  # 反检测Chrome驱动
+selenium-stealth>=1.0.6  # Selenium隐身模式
+fake-useragent>=1.4.0  # 随机User-Agent生成器
 
 # HTTP请求
 requests>=2.28.0

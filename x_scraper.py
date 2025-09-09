@@ -3,6 +3,7 @@
 """
 X(Twitter) 用户吐槽和问题抓取分析工具
 支持中英文内容抓取、智能分类和本地存储
+集成Selenium反爬机制绕过功能
 """
 
 import tweepy
@@ -21,6 +22,17 @@ from typing import List, Dict, Optional
 import time
 import random
 
+# 导入反爬基础类
+try:
+    from selenium_stealth_base import StealthSeleniumBase
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    SELENIUM_AVAILABLE = True
+except ImportError:
+    SELENIUM_AVAILABLE = False
+    print("警告: Selenium相关模块未安装，将仅使用Twitter API模式")
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
@@ -33,15 +45,22 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class XScraper:
-    def __init__(self, config_file: str = 'config.json'):
+    def __init__(self, config_file: str = 'config.json', use_selenium: bool = False, use_stealth: bool = True):
         """初始化X抓取器"""
         self.config = self.load_config(config_file)
         self.api = self.setup_twitter_api()
         self.db_path = self.config.get('database_path', 'x_complaints.db')
+        self.use_selenium = use_selenium and SELENIUM_AVAILABLE
+        self.use_stealth = use_stealth
+        self.stealth_driver = None
         self.setup_database()
         
         # 设置jieba分词
         jieba.set_dictionary('dict.txt.big')  # 使用繁体字典以支持更多中文词汇
+        
+        # 初始化Selenium（如果启用）
+        if self.use_selenium:
+            self.setup_selenium_driver()
         
     def load_config(self, config_file: str) -> Dict:
         """加载配置文件"""
@@ -132,6 +151,164 @@ class XScraper:
         conn.commit()
         conn.close()
         logger.info("数据库设置完成")
+    
+    def setup_selenium_driver(self):
+        """设置Selenium驱动（带反爬功能）"""
+        if not SELENIUM_AVAILABLE:
+            logger.warning("Selenium不可用，跳过驱动设置")
+            return False
+        
+        try:
+            if self.use_stealth:
+                logger.info("初始化反爬Selenium驱动")
+                self.stealth_driver = StealthSeleniumBase(
+                    headless=True,
+                    use_undetected=True,
+                    use_stealth=True,
+                    use_proxy=self.config.get('proxy', None),
+                    window_size=(1920, 1080)
+                )
+                logger.info("反爬Selenium驱动初始化成功")
+                return True
+            else:
+                logger.info("初始化标准Selenium驱动")
+                # 这里可以添加标准Selenium初始化代码
+                return True
+                
+        except Exception as e:
+            logger.error(f"Selenium驱动初始化失败: {e}")
+            self.use_selenium = False
+            return False
+    
+    def selenium_search_tweets(self, query: str, max_results: int = 100) -> List[Dict]:
+        """使用Selenium搜索推文（反爬版本）"""
+        if not self.use_selenium or not self.stealth_driver:
+            logger.warning("Selenium未启用，使用API搜索")
+            return self.search_complaints(query, max_results)
+        
+        tweets = []
+        try:
+            # 构建搜索URL
+            search_url = f"https://twitter.com/search?q={query}&src=typed_query&f=live"
+            logger.info(f"使用Selenium搜索: {query}")
+            
+            # 访问搜索页面
+            if not self.stealth_driver.get_page(search_url):
+                logger.error("无法访问Twitter搜索页面")
+                return tweets
+            
+            # 等待推文加载
+            time.sleep(3)
+            
+            # 滚动加载更多推文
+            for scroll_count in range(5):
+                # 模拟人类滚动行为
+                self.stealth_driver.simulate_human_behavior()
+                
+                # 滚动页面
+                scroll_distance = random.randint(800, 1200)
+                self.stealth_driver.execute_script(f"window.scrollTo(0, {scroll_distance * (scroll_count + 1)});")
+                
+                # 随机等待
+                time.sleep(random.uniform(2, 4))
+            
+            # 提取推文
+            tweet_elements = self.stealth_driver.driver.find_elements(By.CSS_SELECTOR, '[data-testid="tweet"]')
+            logger.info(f"找到 {len(tweet_elements)} 个推文元素")
+            
+            for i, tweet_element in enumerate(tweet_elements[:max_results]):
+                try:
+                    tweet_data = self.extract_tweet_from_element(tweet_element, query)
+                    if tweet_data:
+                        tweets.append(tweet_data)
+                        
+                except Exception as e:
+                    logger.warning(f"提取第 {i+1} 个推文失败: {e}")
+                    continue
+            
+            logger.info(f"Selenium搜索完成，获得 {len(tweets)} 条推文")
+            
+        except Exception as e:
+            logger.error(f"Selenium搜索出错: {e}")
+        
+        return tweets
+    
+    def extract_tweet_from_element(self, tweet_element, search_query: str) -> Optional[Dict]:
+        """从推文元素提取数据"""
+        try:
+            # 提取推文文本
+            try:
+                text_element = tweet_element.find_element(By.CSS_SELECTOR, '[data-testid="tweetText"]')
+                content = text_element.text
+            except:
+                content = ""
+            
+            if not content:
+                return None
+            
+            # 提取用户信息
+            try:
+                user_element = tweet_element.find_element(By.CSS_SELECTOR, '[data-testid="User-Name"] a')
+                username = user_element.get_attribute('href').split('/')[-1]
+            except:
+                username = "unknown"
+            
+            # 提取互动数据
+            like_count = self.extract_interaction_count(tweet_element, '[data-testid="like"]')
+            retweet_count = self.extract_interaction_count(tweet_element, '[data-testid="retweet"]')
+            reply_count = self.extract_interaction_count(tweet_element, '[data-testid="reply"]')
+            
+            # 生成唯一ID
+            tweet_id = f"selenium_{username}_{hash(content)}_{int(time.time())}"
+            
+            # 分析推文
+            language = self.detect_language(content)
+            keywords = self.extract_keywords(content, language)
+            difficulty = self.calculate_difficulty_level(content, language)
+            category = self.categorize_complaint(content, keywords)
+            sentiment = self.calculate_sentiment_score(content, language)
+            
+            return {
+                'tweet_id': tweet_id,
+                'user_id': username,
+                'username': username,
+                'content': content,
+                'language': language,
+                'created_at': datetime.now(),
+                'difficulty_level': difficulty,
+                'category': category,
+                'keywords': ','.join(keywords),
+                'sentiment_score': sentiment,
+                'retweet_count': retweet_count,
+                'like_count': like_count,
+                'reply_count': reply_count
+            }
+            
+        except Exception as e:
+            logger.warning(f"提取推文数据失败: {e}")
+            return None
+    
+    def extract_interaction_count(self, tweet_element, selector: str) -> int:
+        """提取互动数量"""
+        try:
+            count_element = tweet_element.find_element(By.CSS_SELECTOR, selector)
+            count_text = count_element.text.strip()
+            
+            if not count_text or count_text == '0':
+                return 0
+            
+            # 处理K, M等单位
+            if 'K' in count_text.upper():
+                return int(float(count_text.upper().replace('K', '')) * 1000)
+            elif 'M' in count_text.upper():
+                return int(float(count_text.upper().replace('M', '')) * 1000000)
+            else:
+                # 提取数字
+                numbers = re.findall(r'\d+', count_text)
+                return int(numbers[0]) if numbers else 0
+                
+        except:
+            return 0
     
     def detect_language(self, text: str) -> str:
         """检测文本语言"""
@@ -256,8 +433,24 @@ class XScraper:
             
             return (positive_count - negative_count) / (positive_count + negative_count)
     
-    def search_complaints(self, query: str, max_results: int = 100) -> List[Dict]:
+    def search_complaints(self, query: str, max_results: int = 100, use_selenium: bool = None) -> List[Dict]:
         """搜索抱怨和问题相关的推文"""
+        # 决定使用哪种方式
+        if use_selenium is None:
+            use_selenium = self.use_selenium
+        
+        if use_selenium and self.stealth_driver:
+            logger.info("使用Selenium反爬模式搜索")
+            return self.selenium_search_tweets(query, max_results)
+        elif self.api:
+            logger.info("使用Twitter API搜索")
+            return self.api_search_complaints(query, max_results)
+        else:
+            logger.error("Twitter API和Selenium都未可用")
+            return []
+    
+    def api_search_complaints(self, query: str, max_results: int = 100) -> List[Dict]:
+        """使用Twitter API搜索抱怨和问题相关的推文"""
         if not self.api:
             logger.error("Twitter API未初始化")
             return []
@@ -480,42 +673,89 @@ class XScraper:
 
 def main():
     """主函数"""
-    scraper = XScraper()
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='X(Twitter) 用户吐槽抓取工具')
+    parser.add_argument('--selenium', action='store_true', help='使用Selenium反爬模式')
+    parser.add_argument('--stealth', action='store_true', default=True, help='启用反检测功能')
+    parser.add_argument('--headless', action='store_true', default=True, help='无头模式')
+    parser.add_argument('--proxy', type=str, help='代理服务器 (host:port)')
+    parser.add_argument('--max-results', type=int, default=50, help='每个查询的最大结果数')
+    
+    args = parser.parse_args()
+    
+    # 创建抓取器
+    scraper = XScraper(
+        config_file='config.json',
+        use_selenium=args.selenium,
+        use_stealth=args.stealth
+    )
+    
+    print("🚀 X(Twitter) 用户吐槽抓取工具")
+    print("=" * 50)
+    
+    if args.selenium and SELENIUM_AVAILABLE:
+        print("✓ 使用Selenium反爬模式")
+        if args.stealth:
+            print("✓ 启用反检测功能")
+    elif scraper.api:
+        print("✓ 使用Twitter API模式")
+    else:
+        print("✗ 无可用的抓取方式")
+        return
     
     # 示例搜索查询
     queries = [
-        "微信",
-        "支付宝", 
-        "淘宝",
-        "iPhone",
-        "Android",
-        "Windows"
+        "微信问题",
+        "支付宝bug", 
+        "淘宝购物问题",
+        "iPhone故障",
+        "Android卡顿",
+        "Windows错误"
     ]
     
     all_complaints = []
     
-    for query in queries:
-        logger.info(f"搜索关键词: {query}")
-        complaints = scraper.search_complaints(query, max_results=50)
-        all_complaints.extend(complaints)
-        time.sleep(5)  # 避免API限制
-    
-    # 保存数据
-    if all_complaints:
-        scraper.save_complaints(all_complaints)
+    try:
+        for query in queries:
+            logger.info(f"搜索关键词: {query}")
+            complaints = scraper.search_complaints(query, max_results=args.max_results)
+            all_complaints.extend(complaints)
+            
+            # 延迟（Selenium模式延迟更长）
+            delay = random.uniform(5, 10) if args.selenium else random.uniform(2, 5)
+            logger.info(f"等待 {delay:.1f} 秒...")
+            time.sleep(delay)
         
-        # 导出文件
-        scraper.export_to_files()
-        
-        # 生成报告
-        report = scraper.generate_report()
-        with open('output/analysis_report.md', 'w', encoding='utf-8') as f:
-            f.write(report)
-        
-        print(report)
-        logger.info("抓取和分析完成！")
-    else:
-        logger.warning("未找到相关数据")
+        # 保存数据
+        if all_complaints:
+            scraper.save_complaints(all_complaints)
+            
+            # 导出文件
+            scraper.export_to_files()
+            
+            # 生成报告
+            report = scraper.generate_report()
+            with open('output/analysis_report.md', 'w', encoding='utf-8') as f:
+                f.write(report)
+            
+            print(f"\n🎉 抓取完成！")
+            print(f"📊 共获得 {len(all_complaints)} 条数据")
+            print(f"📁 结果保存在 output 目录")
+            print(report)
+            logger.info("抓取和分析完成！")
+        else:
+            logger.warning("未找到相关数据")
+            
+    except KeyboardInterrupt:
+        logger.info("用户中断抓取")
+    except Exception as e:
+        logger.error(f"抓取过程出错: {e}")
+    finally:
+        # 清理资源
+        if scraper.stealth_driver:
+            scraper.stealth_driver.quit()
+            logger.info("Selenium驱动已关闭")
 
 if __name__ == "__main__":
     main()

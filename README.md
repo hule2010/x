@@ -2,13 +2,24 @@
 
 一个强大的X(Twitter)数据抓取和分析工具，专门用于收集、分类和分析用户的吐槽和问题反馈。支持中英文内容处理，提供智能分类、难度评估和情感分析功能。
 
+**🆕 新功能：集成Selenium反爬机制绕过功能！**
+
 ## ✨ 主要功能
 
 ### 🔍 数据抓取
+- **双模式抓取**: 支持Twitter API和Selenium反爬模式
+- **反检测技术**: 集成undetected-chromedriver和selenium-stealth
 - **智能搜索**: 基于关键词搜索相关吐槽和问题
 - **多语言支持**: 自动识别和处理中英文内容
 - **实时抓取**: 获取最新的用户反馈数据
 - **API限制管理**: 自动处理API速率限制
+
+### 🛡️ 反爬机制绕过
+- **隐藏自动化特征**: 自动隐藏webdriver属性
+- **随机User-Agent**: 动态切换浏览器标识
+- **人类行为模拟**: 随机滚动、点击、延迟
+- **代理支持**: 支持HTTP/SOCKS代理
+- **多重反检测**: 综合多种反检测技术
 
 ### 📊 智能分类
 - **难度等级**: 1-5级自动难度评估
@@ -35,7 +46,10 @@
 # 克隆或下载项目文件
 # 确保Python 3.7+已安装
 
-# 运行自动安装脚本
+# 安装依赖包（包含反爬功能）
+pip install -r requirements_selenium.txt
+
+# 或运行自动安装脚本
 python setup.py
 ```
 
@@ -58,14 +72,24 @@ python setup.py
 ### 3. 运行数据抓取
 
 ```bash
-# 运行主抓取程序
+# Twitter API模式（需要API凭证）
 python x_scraper.py
 
-# 或者自定义搜索
+# Selenium反爬模式（无需API凭证，推荐）
+python x_scraper.py --selenium --stealth
+
+# 流程优化商机发现工具（默认启用反爬）
+python process_optimization_scraper.py
+
+# 反爬功能演示和测试
+python selenium_stealth_demo.py
+
+# 自定义搜索示例
 python -c "
 from x_scraper import XScraper
-scraper = XScraper()
-complaints = scraper.search_complaints('微信', max_results=100)
+# 使用反爬模式
+scraper = XScraper(use_selenium=True, use_stealth=True)
+complaints = scraper.search_complaints('微信问题', max_results=100)
 scraper.save_complaints(complaints)
 "
 ```
@@ -226,15 +250,23 @@ scraper.save_complaints(all_data)
 - 建议在搜索间隔添加适当延迟
 - 监控API使用量，避免超出限制
 
+### 反爬机制使用建议
+- **推荐使用Selenium模式**：无需API凭证，更稳定
+- **合理设置延迟**：避免过于频繁的请求
+- **使用代理IP**：提高匿名性和成功率
+- **定期更换配置**：避免被识别为固定模式
+
 ### 数据合规
 - 遵守Twitter服务条款
 - 尊重用户隐私，不要存储敏感信息
 - 仅用于合法的数据分析目的
+- 合理使用反爬技术，避免对服务器造成压力
 
 ### 性能优化
 - 大量数据抓取时建议分批处理
 - 定期清理过期数据
 - 使用数据库索引提高查询性能
+- Selenium模式下适当增加延迟时间
 
 ## 🛠️ 故障排除
 
@@ -251,6 +283,15 @@ A: 安装更好的中文字体和词典文件
 
 **Q: 图表显示乱码**
 A: 安装中文字体，设置matplotlib中文支持
+
+**Q: Selenium反爬模式启动失败**
+A: 确保已安装Chrome浏览器，检查依赖包是否完整安装
+
+**Q: 被网站检测为机器人**
+A: 尝试使用代理IP，增加延迟时间，或更换User-Agent
+
+**Q: ChromeDriver版本不匹配**
+A: 使用undetected-chromedriver会自动处理版本匹配
 
 ### 日志查看
 ```bash
@@ -270,6 +311,10 @@ grep "ERROR" x_scraper.log
 - [ ] 多用户和权限管理
 - [ ] 数据导出到更多格式
 - [ ] 情感分析模型优化
+- [x] **Selenium反爬机制绕过** ✅
+- [ ] 分布式代理池管理
+- [ ] 验证码自动识别
+- [ ] 更多反检测技术集成
 
 ## 📄 许可证
 
