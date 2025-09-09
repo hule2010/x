@@ -1,0 +1,7 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+2,zh_2,user_zh_8169,用户803,支付宝的界面设计太复杂了，找个功能要找半天,zh,2025-08-24 10:12:48.689110,3,技术问题,"问题,体验,功能",-0.5302330184913655,7,22,18,2025-09-09 05:12:48
+6,zh_6,user_zh_2734,用户676,微信支付经常出错，付款的时候总是失败,zh,2025-08-23 10:12:48.689135,3,功能需求,"问题,体验,功能",-0.7475203084788531,20,18,10,2025-09-09 05:12:48
+20,en_5,user_en_2077,user509,WhatsApp messages are not delivering properly,en,2025-08-22 12:12:48.689206,3,功能需求,"problem,issue,feature",-0.5671990529252171,4,53,2,2025-09-09 05:12:48
+24,en_9,user_en_4012,user253,Google search results are not relevant anymore,en,2025-08-21 22:12:48.689224,3,技术问题,"problem,issue,feature",-0.8960540301600409,19,74,9,2025-09-09 05:12:48
+23,en_8,user_en_8476,user175,"Amazon delivery is always late, very disappointing",en,2025-08-16 12:12:48.689220,3,用户体验,"problem,issue,feature",-0.21462530698206173,14,0,7,2025-09-09 05:12:48
+5,zh_5,user_zh_4906,用户700,安卓系统更新后变得很慢，应用启动要等很久,zh,2025-08-13 03:12:48.689129,3,服务质量,"问题,体验,功能",-0.3236478313455146,47,57,1,2025-09-09 05:12:48

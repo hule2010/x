@@ -1,0 +1,8 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+18,en_3,user_en_7434,user278,"Facebook's algorithm is broken, I don't see posts from friends",en,2025-09-07 02:12:48.689197,5,功能需求,"problem,issue,feature",-0.24391286611173202,18,55,5,2025-09-09 05:12:48
+14,zh_14,user_zh_7770,用户133,iPhone的存储空间不够用，64GB根本不够,zh,2025-09-06 01:12:48.689178,5,用户体验,"问题,体验,功能",-0.6817861141525121,47,23,12,2025-09-09 05:12:48
+25,en_10,user_en_3466,user918,Apple's new iOS update made my phone slower,en,2025-08-30 02:12:48.689227,5,服务质量,"problem,issue,feature",-0.20352230209271527,14,37,8,2025-09-09 05:12:48
+7,zh_7,user_zh_5715,用户553,支付宝的客服态度很差，问题解决不了还很傲慢,zh,2025-08-18 09:12:48.689139,5,功能需求,"问题,体验,功能",-0.6641289806872629,8,53,2,2025-09-09 05:12:48
+4,zh_4,user_zh_8837,用户563,iPhone电池耗电太快，一天要充好几次电,zh,2025-08-17 13:12:48.689124,5,用户体验,"问题,体验,功能",-0.24577520594748847,32,58,2,2025-09-09 05:12:48
+22,en_7,user_en_4858,user428,Netflix removed my favorite shows without warning,en,2025-08-15 07:12:48.689215,5,价格费用,"problem,issue,feature",-0.8014262640623421,3,14,14,2025-09-09 05:12:48
+13,zh_13,user_zh_9291,用户671,淘宝的退货流程太复杂，客服推来推去,zh,2025-08-14 15:12:48.689173,5,功能需求,"问题,体验,功能",-0.48399287824836196,13,82,20,2025-09-09 05:12:48

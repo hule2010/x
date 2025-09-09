@@ -1,0 +1,30 @@
+# X(Twitter) 用户吐槽抓取分析工具依赖包
+
+# Twitter API
+tweepy>=4.14.0
+
+# 数据处理
+pandas>=1.5.0
+numpy>=1.21.0
+
+# 数据库
+sqlite3  # Python内置模块
+
+# 文本处理和分析
+textblob>=0.17.1
+jieba>=0.42.1
+
+# 可视化
+matplotlib>=3.5.0
+seaborn>=0.11.0
+wordcloud>=1.9.0
+
+# 其他工具
+requests>=2.28.0
+python-dateutil>=2.8.0
+
+# 可选：用于更好的中文分词
+# opencc-python3>=1.1.0  # 繁简转换
+
+# 开发和调试
+# jupyter>=1.0.0  # 用于数据分析笔记本

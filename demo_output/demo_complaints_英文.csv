@@ -1,0 +1,11 @@
+id,tweet_id,user_id,username,content,language,created_at,difficulty_level,category,keywords,sentiment_score,retweet_count,like_count,reply_count,collected_at
+18,en_3,user_en_7434,user278,"Facebook's algorithm is broken, I don't see posts from friends",en,2025-09-07 02:12:48.689197,5,功能需求,"problem,issue,feature",-0.24391286611173202,18,55,5,2025-09-09 05:12:48
+21,en_6,user_en_4748,user170,Spotify keeps playing the same songs over and over,en,2025-09-06 21:12:48.689210,4,价格费用,"problem,issue,feature",-0.3892595509413469,22,40,8,2025-09-09 05:12:48
+25,en_10,user_en_3466,user918,Apple's new iOS update made my phone slower,en,2025-08-30 02:12:48.689227,5,服务质量,"problem,issue,feature",-0.20352230209271527,14,37,8,2025-09-09 05:12:48
+20,en_5,user_en_2077,user509,WhatsApp messages are not delivering properly,en,2025-08-22 12:12:48.689206,3,功能需求,"problem,issue,feature",-0.5671990529252171,4,53,2,2025-09-09 05:12:48
+24,en_9,user_en_4012,user253,Google search results are not relevant anymore,en,2025-08-21 22:12:48.689224,3,技术问题,"problem,issue,feature",-0.8960540301600409,19,74,9,2025-09-09 05:12:48
+19,en_4,user_en_8361,user782,YouTube ads are getting too long and annoying,en,2025-08-21 01:12:48.689201,2,技术问题,"problem,issue,feature",0.13845859220887047,4,20,11,2025-09-09 05:12:48
+17,en_2,user_en_8816,user466,Instagram keeps crashing when I try to upload photos,en,2025-08-17 11:12:48.689193,4,功能需求,"problem,issue,feature",-0.09852010536431366,13,74,9,2025-09-09 05:12:48
+23,en_8,user_en_8476,user175,"Amazon delivery is always late, very disappointing",en,2025-08-16 12:12:48.689220,3,用户体验,"problem,issue,feature",-0.21462530698206173,14,0,7,2025-09-09 05:12:48
+22,en_7,user_en_4858,user428,Netflix removed my favorite shows without warning,en,2025-08-15 07:12:48.689215,5,价格费用,"problem,issue,feature",-0.8014262640623421,3,14,14,2025-09-09 05:12:48
+16,en_1,user_en_4584,user935,"Twitter's new update is terrible, the interface is confusing",en,2025-08-12 11:12:48.689187,2,服务质量,"problem,issue,feature",-0.7265321956066608,23,11,7,2025-09-09 05:12:48
