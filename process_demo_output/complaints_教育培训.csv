@@ -1,0 +1,11 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+10,zh_process_10,用户554,保险理赔流程太复杂，要提供各种证明材料,zh,2025-09-08 08:22:52.465115,重复操作,8,教育培训,数据录入,中,流程优化,61,12,19,2025-09-09 05:22:52
+8,zh_process_8,用户777,网购退换货要拍照、填单、等客服，太浪费时间了,zh,2025-08-29 17:22:52.465107,体验问题,7,教育培训,注册登录,中,流程优化,78,41,29,2025-09-09 05:22:52
+4,zh_process_4,用户182,快递退货流程太繁琐，要填好多表格还要等审核,zh,2025-08-27 16:22:52.465089,体验问题,6,教育培训,支付结算,中,流程优化,88,11,11,2025-09-09 05:22:52
+21,en_process_1,user937,"The banking process is so complicated, why do I need to fill out 5 different forms?",en,2025-08-28 04:22:52.465167,效率问题,6,教育培训,支付结算,中,process optimization,6,12,21,2025-09-09 05:22:52
+23,en_process_3,user415,"Government website process is confusing, too many steps for simple tasks",en,2025-08-24 19:22:52.465182,复杂度问题,6,教育培训,预约排队,低,process optimization,15,15,25,2025-09-09 05:22:52
+30,en_process_10,user265,Job application process on this platform is too lengthy and repetitive,en,2025-08-22 16:22:52.465209,复杂度问题,6,教育培训,客户服务,高,process optimization,38,16,10,2025-09-09 05:22:52
+6,zh_process_6,用户758,银行APP转账步骤太多，为什么不能一键转账,zh,2025-08-31 05:22:52.465099,效率问题,5,教育培训,客户服务,高,流程优化,11,15,1,2025-09-09 05:22:52
+13,zh_process_13,用户472,房产过户手续繁琐，来回跑了十几趟,zh,2025-08-22 09:22:52.465134,体验问题,5,教育培训,申请审批,高,流程优化,45,44,13,2025-09-09 05:22:52
+27,en_process_7,user498,"University enrollment process is outdated, still using paper forms in 2024",en,2025-09-02 08:22:52.465197,体验问题,5,教育培训,预约排队,中,process optimization,16,18,14,2025-09-09 05:22:52
+24,en_process_4,user938,"Return process on this shopping site is ridiculous, way too many hoops to jump through",en,2025-08-14 11:22:52.465186,流程设计,4,教育培训,客户服务,高,process optimization,46,38,23,2025-09-09 05:22:52

@@ -1,0 +1,5 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+28,en_process_8,user728,"Delivery return process takes forever, why can't it be automated?",en,2025-08-26 12:22:52.465201,流程设计,8,政务服务,申请审批,低,process optimization,23,23,17,2025-09-09 05:22:52
+1,zh_process_1,用户261,银行办个业务要跑三趟，流程太复杂了，能不能简化一下,zh,2025-08-18 16:22:52.465053,系统技术,5,政务服务,支付结算,高,流程优化,11,4,7,2025-09-09 05:22:52
+16,zh_process_16,用户876,电信营业厅办业务排队时间长，流程效率低,zh,2025-08-28 23:22:52.465146,效率问题,5,政务服务,信息查询,低,流程优化,9,37,29,2025-09-09 05:22:52
+32,en_process_12,user363,"Account verification process is frustrating, too many security steps",en,2025-08-16 21:22:52.465218,复杂度问题,4,政务服务,申请审批,中,process optimization,42,20,5,2025-09-09 05:22:52

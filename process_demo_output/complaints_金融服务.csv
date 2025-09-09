@@ -1,0 +1,2 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+22,en_process_2,user190,"Hospital appointment system is a nightmare, takes forever to book anything",en,2025-08-26 22:22:52.465175,成本问题,8,金融服务,申请审批,低,process optimization,42,20,15,2025-09-09 05:22:52

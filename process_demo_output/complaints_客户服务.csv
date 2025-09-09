@@ -1,0 +1,5 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+18,zh_process_18,用户943,网约车投诉流程复杂，问题解决效率很低,zh,2025-09-01 11:22:52.465154,复杂度问题,10,客户服务,客户服务,高,流程优化,67,14,14,2025-09-09 05:22:52
+11,zh_process_11,用户559,学校报名系统设计不合理，每年都要重新注册,zh,2025-08-18 17:22:52.465120,复杂度问题,8,客户服务,信息查询,高,流程优化,69,10,1,2025-09-09 05:22:52
+29,en_process_9,user732,"Tax filing process is overly complicated, need to simplify the steps",en,2025-08-22 12:22:52.465204,成本问题,5,客户服务,支付结算,低,process optimization,36,22,23,2025-09-09 05:22:52
+33,en_process_13,user651,Subscription cancellation process is deliberately complicated,en,2025-09-06 20:22:52.465222,流程设计,4,客户服务,退换货,中,process optimization,57,5,19,2025-09-09 05:22:52

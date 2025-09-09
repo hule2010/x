@@ -1,0 +1,5 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+3,zh_process_3,用户202,政务服务网上办事流程设计得不合理，找个表格要点十几下,zh,2025-08-29 08:22:52.465084,成本问题,9,医疗健康,支付结算,中,流程优化,68,7,10,2025-09-09 05:22:52
+22,en_process_2,user190,"Hospital appointment system is a nightmare, takes forever to book anything",en,2025-08-26 22:22:52.465175,成本问题,8,金融服务,申请审批,低,process optimization,42,20,15,2025-09-09 05:22:52
+9,zh_process_9,用户202,政府办证要准备一堆材料，还要跑好几个部门,zh,2025-08-24 20:22:52.465111,成本问题,5,餐饮外卖,退换货,中,流程优化,47,48,8,2025-09-09 05:22:52
+29,en_process_9,user732,"Tax filing process is overly complicated, need to simplify the steps",en,2025-08-22 12:22:52.465204,成本问题,5,客户服务,支付结算,低,process optimization,36,22,23,2025-09-09 05:22:52

@@ -1,0 +1,4 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+14,zh_process_14,用户498,信用卡申请流程太长，审核时间也太久,zh,2025-08-12 14:22:52.465138,系统技术,9,医疗健康,数据录入,中,流程优化,97,31,27,2025-09-09 05:22:52
+1,zh_process_1,用户261,银行办个业务要跑三趟，流程太复杂了，能不能简化一下,zh,2025-08-18 16:22:52.465053,系统技术,5,政务服务,支付结算,高,流程优化,11,4,7,2025-09-09 05:22:52
+35,en_process_15,user937,"Tech support ticket system is inefficient, no clear workflow",en,2025-08-12 07:22:52.465230,系统技术,5,物流快递,客户服务,中,process optimization,32,0,13,2025-09-09 05:22:52

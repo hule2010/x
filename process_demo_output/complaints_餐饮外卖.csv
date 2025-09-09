@@ -1,0 +1,5 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+31,en_process_11,user121,Refund process takes weeks when it should take minutes,en,2025-09-01 02:22:52.465212,重复操作,9,餐饮外卖,退换货,中,process optimization,49,3,14,2025-09-09 05:22:52
+34,en_process_14,user787,Loan application process requires too much documentation,en,2025-08-21 02:22:52.465226,效率问题,8,餐饮外卖,预约排队,低,process optimization,57,33,10,2025-09-09 05:22:52
+19,zh_process_19,用户507,电商平台售后流程设计不合理，用户体验差,zh,2025-08-29 02:22:52.465158,效率问题,6,餐饮外卖,退换货,低,流程优化,95,2,0,2025-09-09 05:22:52
+9,zh_process_9,用户202,政府办证要准备一堆材料，还要跑好几个部门,zh,2025-08-24 20:22:52.465111,成本问题,5,餐饮外卖,退换货,中,流程优化,47,48,8,2025-09-09 05:22:52

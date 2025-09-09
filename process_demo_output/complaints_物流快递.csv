@@ -1,0 +1,6 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+7,zh_process_7,用户216,医保报销流程复杂，老人根本搞不懂怎么操作,zh,2025-09-02 17:22:52.465103,效率问题,9,物流快递,退换货,高,流程优化,68,37,19,2025-09-09 05:22:52
+12,zh_process_12,用户645,外卖退款流程麻烦，要等客服处理好久,zh,2025-08-17 00:22:52.465129,重复操作,7,物流快递,退换货,低,流程优化,97,49,4,2025-09-09 05:22:52
+2,zh_process_2,用户353,医院挂号系统太麻烦，每次都要重新填一遍信息,zh,2025-08-12 21:22:52.465077,流程设计,6,物流快递,支付结算,中,流程优化,26,45,5,2025-09-09 05:22:52
+5,zh_process_5,用户676,客服电话转来转去，一个简单问题要说半天,zh,2025-08-23 18:22:52.465094,人工服务,5,物流快递,支付结算,低,流程优化,31,8,15,2025-09-09 05:22:52
+35,en_process_15,user937,"Tech support ticket system is inefficient, no clear workflow",en,2025-08-12 07:22:52.465230,系统技术,5,物流快递,客户服务,中,process optimization,32,0,13,2025-09-09 05:22:52

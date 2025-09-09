@@ -1,0 +1,6 @@
+id,tweet_id,user_handle,content,language,created_at,pain_point_category,opportunity_score,business_sector,process_type,optimization_potential,keywords,like_count,retweet_count,reply_count,collected_at
+18,zh_process_18,用户943,网约车投诉流程复杂，问题解决效率很低,zh,2025-09-01 11:22:52.465154,复杂度问题,10,客户服务,客户服务,高,流程优化,67,14,14,2025-09-09 05:22:52
+11,zh_process_11,用户559,学校报名系统设计不合理，每年都要重新注册,zh,2025-08-18 17:22:52.465120,复杂度问题,8,客户服务,信息查询,高,流程优化,69,10,1,2025-09-09 05:22:52
+23,en_process_3,user415,"Government website process is confusing, too many steps for simple tasks",en,2025-08-24 19:22:52.465182,复杂度问题,6,教育培训,预约排队,低,process optimization,15,15,25,2025-09-09 05:22:52
+30,en_process_10,user265,Job application process on this platform is too lengthy and repetitive,en,2025-08-22 16:22:52.465209,复杂度问题,6,教育培训,客户服务,高,process optimization,38,16,10,2025-09-09 05:22:52
+32,en_process_12,user363,"Account verification process is frustrating, too many security steps",en,2025-08-16 21:22:52.465218,复杂度问题,4,政务服务,申请审批,中,process optimization,42,20,5,2025-09-09 05:22:52
