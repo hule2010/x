@@ -1,0 +1,28 @@
+# Selenium 反检测项目依赖
+
+# 核心依赖
+selenium==4.17.2
+webdriver-manager==4.0.1
+
+# 反检测工具（推荐安装）
+undetected-chromedriver==3.5.4
+selenium-stealth==1.0.6
+
+# 辅助工具
+requests==2.31.0
+python-dotenv==1.0.0
+
+# 数据处理
+beautifulsoup4==4.12.3
+lxml==5.1.0
+
+# 日志和监控
+loguru==0.7.2
+
+# 代理支持（可选）
+# selenium-wire==5.1.0
+# pysocks==1.7.1
+
+# 验证码处理（可选）
+# python-anticaptcha==1.0.0
+# 2captcha-python==1.2.1
