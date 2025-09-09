@@ -3,6 +3,7 @@
 """
 流程优化商机发现工具 - 基于Selenium的X(Twitter)抓取器
 支持Mac和Windows系统，专门抓取流程优化相关的用户抱怨
+集成反爬机制绕过功能
 """
 
 import os
@@ -26,6 +27,9 @@ import requests
 import zipfile
 import logging
 
+# 导入反爬基础类
+from selenium_stealth_base import StealthSeleniumBase
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
@@ -38,10 +42,14 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class ProcessOptimizationScraper:
-    def __init__(self):
+    def __init__(self, use_stealth=True, headless=True, use_proxy=None):
         self.system = platform.system().lower()
         self.driver = None
         self.db_path = 'process_opportunities.db'
+        self.use_stealth = use_stealth
+        self.headless = headless
+        self.use_proxy = use_proxy
+        self.stealth_driver = None
         self.setup_database()
         
         # 流程优化相关关键词
@@ -187,31 +195,41 @@ class ProcessOptimizationScraper:
             return None
     
     def setup_chrome_driver(self, headless=True):
-        """设置Chrome浏览器驱动"""
+        """设置Chrome浏览器驱动（带反爬功能）"""
         try:
-            # 获取或下载驱动
-            driver_path = self.download_chromedriver()
-            if not driver_path:
-                logger.error("无法获取ChromeDriver")
-                return None
-            
-            # Chrome选项
-            chrome_options = Options()
-            if headless:
-                chrome_options.add_argument('--headless')
-            chrome_options.add_argument('--no-sandbox')
-            chrome_options.add_argument('--disable-dev-shm-usage')
-            chrome_options.add_argument('--disable-gpu')
-            chrome_options.add_argument('--window-size=1920,1080')
-            chrome_options.add_argument('--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
-            
-            # 创建服务
-            service = Service(driver_path)
-            
-            # 创建驱动
-            self.driver = webdriver.Chrome(service=service, options=chrome_options)
-            logger.info("Chrome驱动设置成功")
-            return self.driver
+            if self.use_stealth:
+                # 使用反爬基础类
+                logger.info("使用反爬机制绕过功能")
+                self.stealth_driver = StealthSeleniumBase(
+                    headless=headless,
+                    use_undetected=True,
+                    use_stealth=True,
+                    use_proxy=self.use_proxy,
+                    window_size=(1920, 1080)
+                )
+                self.driver = self.stealth_driver.driver
+                logger.info("反爬Chrome驱动设置成功")
+                return self.driver
+            else:
+                # 使用传统方式（保留兼容性）
+                driver_path = self.download_chromedriver()
+                if not driver_path:
+                    logger.error("无法获取ChromeDriver")
+                    return None
+                
+                chrome_options = Options()
+                if headless:
+                    chrome_options.add_argument('--headless')
+                chrome_options.add_argument('--no-sandbox')
+                chrome_options.add_argument('--disable-dev-shm-usage')
+                chrome_options.add_argument('--disable-gpu')
+                chrome_options.add_argument('--window-size=1920,1080')
+                chrome_options.add_argument('--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
+                
+                service = Service(driver_path)
+                self.driver = webdriver.Chrome(service=service, options=chrome_options)
+                logger.info("传统Chrome驱动设置成功")
+                return self.driver
             
         except Exception as e:
             logger.error(f"设置Chrome驱动失败: {e}")
@@ -232,15 +250,33 @@ class ProcessOptimizationScraper:
                 search_url = f"https://twitter.com/search?q={search_query}&src=typed_query&f=live"
                 
                 logger.info(f"搜索关键词: {term}")
-                self.driver.get(search_url)
                 
-                # 等待页面加载
-                time.sleep(3)
+                if self.use_stealth and self.stealth_driver:
+                    # 使用反爬功能访问页面
+                    if not self.stealth_driver.get_page(search_url):
+                        logger.warning(f"访问搜索页面失败: {search_url}")
+                        continue
+                    
+                    # 使用反爬功能模拟人类行为
+                    self.stealth_driver.simulate_human_behavior()
+                else:
+                    # 传统方式
+                    self.driver.get(search_url)
+                    time.sleep(3)
                 
-                # 滚动加载更多推文
-                for _ in range(5):  # 滚动5次
-                    self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                    time.sleep(2)
+                # 滚动加载更多推文（增强版）
+                for i in range(5):  # 滚动5次
+                    # 随机滚动距离
+                    scroll_distance = random.randint(800, 1200)
+                    self.driver.execute_script(f"window.scrollTo(0, {scroll_distance * (i + 1)});")
+                    
+                    # 随机等待时间
+                    wait_time = random.uniform(2, 4)
+                    time.sleep(wait_time)
+                    
+                    # 偶尔暂停更长时间模拟阅读
+                    if i % 2 == 0:
+                        time.sleep(random.uniform(1, 2))
                 
                 # 查找推文元素
                 tweets = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="tweet"]')
@@ -254,8 +290,19 @@ class ProcessOptimizationScraper:
                         logger.warning(f"提取推文数据失败: {e}")
                         continue
                 
-                # 随机延迟避免被检测
-                time.sleep(random.uniform(2, 5))
+                # 随机延迟避免被检测（增强版）
+                if self.use_stealth and self.stealth_driver:
+                    # 更换User-Agent（偶尔）
+                    if random.random() < 0.3:  # 30%概率更换
+                        self.stealth_driver.change_user_agent()
+                    
+                    # 模拟人类行为
+                    self.stealth_driver.simulate_human_behavior()
+                
+                # 随机延迟
+                delay_time = random.uniform(3, 8)  # 增加延迟时间
+                logger.info(f"等待 {delay_time:.1f} 秒...")
+                time.sleep(delay_time)
                 
             except Exception as e:
                 logger.error(f"搜索 {term} 时出错: {e}")
@@ -768,7 +815,9 @@ class ProcessOptimizationScraper:
             logger.error(f"分析过程出错: {e}")
             return []
         finally:
-            if self.driver:
+            if self.stealth_driver:
+                self.stealth_driver.quit()
+            elif self.driver:
                 self.driver.quit()
 
 def main():
@@ -790,7 +839,12 @@ def main():
         "return process frustrating"
     ]
     
-    scraper = ProcessOptimizationScraper()
+    # 创建带反爬功能的抓取器
+    scraper = ProcessOptimizationScraper(
+        use_stealth=True,      # 启用反爬功能
+        headless=True,         # 无头模式
+        use_proxy=None         # 可选：设置代理 "host:port" 或 "user:pass@host:port"
+    )
     opportunities = scraper.run_full_analysis(search_terms, max_tweets_per_term=15)
     
     if opportunities:
